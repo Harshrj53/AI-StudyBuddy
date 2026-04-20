@@ -105,7 +105,7 @@ const QuizHub = () => {
 
         <div className="flex gap-4 w-full">
           <button 
-            onClick={() => setQuiz(null)}
+            onClick={() => { setQuiz(null); setIsFinished(false); setTopic(''); }}
             className="flex-1 bg-primary text-primary-foreground py-4 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-md active:scale-95"
           >
             Back to Hub
