@@ -7,11 +7,13 @@ import {
   GraduationCap, 
   Youtube, 
   Library as LibraryIcon,
-  BookOpen
+  BookOpen,
+  Sun,
+  Moon
 } from 'lucide-react';
-import { cn } from '../utils/cn'; // I'll create this utility
+import { cn } from '../utils/cn'; 
 
-const Sidebar = () => {
+const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
   const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
     { icon: MessageSquare, label: 'Chat Tutor', path: '/chat' },
@@ -23,13 +25,22 @@ const Sidebar = () => {
 
   return (
     <aside className="w-64 bg-card border-r border-border h-full flex flex-col pt-6 shadow-sm">
-      <div className="px-6 mb-8 flex items-center gap-3">
-        <div className="bg-primary p-2 rounded-xl">
-          <BookOpen className="text-primary-foreground h-6 w-6" />
+      <div className="px-6 mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="bg-primary p-2 rounded-xl">
+            <BookOpen className="text-primary-foreground h-6 w-6" />
+          </div>
+          <h1 className="text-xl font-bold tracking-tight text-foreground">
+            Study Buddy
+          </h1>
         </div>
-        <h1 className="text-xl font-bold tracking-tight text-foreground">
-          Study Buddy
-        </h1>
+        <button 
+          onClick={toggleDarkMode}
+          className="p-2 text-muted-foreground hover:bg-secondary hover:text-foreground rounded-lg transition-colors"
+          aria-label="Toggle Dark Mode"
+        >
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
       </div>
 
       <nav className="flex-1 px-4 space-y-1">

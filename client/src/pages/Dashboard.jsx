@@ -63,7 +63,7 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card, i) => (
-          <div key={i} className="bg-card p-6 rounded-2xl border border-border flex items-center gap-4 card-hover shadow-sm">
+          <div key={i} className="bg-card p-6 rounded-lg border border-border flex items-center gap-4 card-hover shadow-sm">
             <div className={`${card.bg} p-3 rounded-xl`}>
               <card.icon className={`h-6 w-6 ${card.color}`} />
             </div>
@@ -76,7 +76,7 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-card p-8 rounded-2xl border border-border shadow-sm">
+        <div className="lg:col-span-2 bg-card p-8 rounded-lg border border-border shadow-sm">
           <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-primary" /> Performance Trends
           </h2>
@@ -124,7 +124,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="bg-card p-8 rounded-2xl border border-border shadow-sm flex flex-col">
+        <div className="bg-card p-8 rounded-lg border border-border shadow-sm flex flex-col">
           <h2 className="text-xl font-bold mb-6">Quick Actions</h2>
           <div className="space-y-4 flex-1">
             <Link to="/notes" className="flex items-center justify-between p-4 rounded-xl border border-border hover:bg-secondary transition-all group">

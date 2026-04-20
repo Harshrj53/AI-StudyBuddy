@@ -33,14 +33,14 @@ const YouTubeExplainer = () => {
   return (
     <div className="p-8 max-w-5xl mx-auto space-y-12">
       <header className="text-center max-w-2xl mx-auto space-y-4">
-        <div className="inline-flex items-center justify-center p-3 bg-red-100 rounded-2xl mb-2">
+        <div className="inline-flex items-center justify-center p-3 bg-red-100 rounded-lg mb-2">
           <Youtube className="h-10 w-10 text-red-600" />
         </div>
-        <h1 className="text-4xl font-black tracking-tight">YouTube Explainer</h1>
+        <h1 className="text-4xl font-bold tracking-tight">YouTube Explainer</h1>
         <p className="text-muted-foreground text-lg">Paste a video link and get an AI-powered summary and explanation of the core concepts.</p>
       </header>
 
-      <div className="bg-card p-1 p-1 bg-gradient-to-br from-red-500/20 via-primary/20 to-purple-500/20 rounded-3xl">
+      <div className="bg-card p-1 p-1 bg-gradient-to-br from-red-500/20 via-primary/20 to-purple-500/20 rounded-xl">
         <div className="bg-card p-8 rounded-[22px] border border-border/50 shadow-xl">
           <form onSubmit={handleExplain} className="flex gap-4">
             <div className="relative flex-1 group">
@@ -52,12 +52,12 @@ const YouTubeExplainer = () => {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="Paste YouTube URL here (e.g., https://youtube.com/watch?v=...)"
-                className="w-full bg-background border border-border rounded-2xl pl-14 pr-6 py-5 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all font-medium"
+                className="w-full bg-background border border-border rounded-lg pl-14 pr-6 py-5 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all font-medium"
               />
             </div>
             <button 
               disabled={!url.trim() || isLoading}
-              className="bg-red-600 text-white px-8 py-5 rounded-2xl font-black text-lg hover:bg-red-700 transition-all disabled:opacity-50 shadow-lg flex items-center gap-3 active:scale-[0.98]"
+              className="bg-red-600 text-white px-8 py-5 rounded-lg font-bold text-lg hover:bg-red-700 transition-all disabled:opacity-50 shadow-lg flex items-center gap-3 active:scale-[0.98]"
             >
               {isLoading ? (
                 <>
@@ -84,12 +84,12 @@ const YouTubeExplainer = () => {
       {result && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="lg:col-span-2 space-y-8">
-            <div className="bg-card p-10 rounded-3xl border border-border shadow-sm">
+            <div className="bg-card p-10 rounded-xl border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                 <div className="bg-primary/10 p-2 rounded-xl text-primary">
                   <Sparkles size={24} />
                 </div>
-                <h2 className="text-2xl font-black">AI Explanation</h2>
+                <h2 className="text-2xl font-bold">AI Explanation</h2>
               </div>
               <div className="prose prose-sm max-w-none text-foreground prose-p:leading-relaxed prose-p:text-base prose-p:mb-6">
                 {result.explanation.split('\n').map((para, i) => (
@@ -98,7 +98,7 @@ const YouTubeExplainer = () => {
               </div>
             </div>
 
-            <div className="bg-card p-10 rounded-3xl border border-border shadow-sm">
+            <div className="bg-card p-10 rounded-xl border border-border shadow-sm">
               <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                 <FileText size={20} className="text-muted-foreground" /> Full Transcript Summary
               </h3>
@@ -109,7 +109,7 @@ const YouTubeExplainer = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm">
+            <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
               <div className="aspect-video bg-muted flex items-center justify-center relative group cursor-pointer">
                 <PlayCircle className="absolute h-16 w-16 text-white/80 group-hover:text-red-500 group-hover:scale-110 transition-all z-10" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all" />
@@ -132,8 +132,8 @@ const YouTubeExplainer = () => {
               </div>
             </div>
 
-            <div className="bg-primary p-8 rounded-3xl text-primary-foreground shadow-xl">
-              <h4 className="font-black text-xl mb-4 leading-tight">Want to study these concepts?</h4>
+            <div className="bg-primary p-8 rounded-xl text-primary-foreground shadow-xl">
+              <h4 className="font-bold text-xl mb-4 leading-tight">Want to study these concepts?</h4>
               <p className="text-primary-foreground/80 text-sm mb-6">Convert this summary into structured notes or generate a quiz to test yourself.</p>
               <div className="space-y-3">
                 <button className="w-full bg-white text-primary py-3 rounded-xl font-bold text-sm hover:bg-opacity-90 transition-all">

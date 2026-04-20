@@ -84,7 +84,7 @@ const ChatTutor = () => {
               {msg.role === 'user' ? <User size={20} /> : <Bot size={20} />}
             </div>
             <div className={cn(
-              "p-4 rounded-2xl shadow-sm text-sm leading-relaxed",
+              "p-4 rounded-lg shadow-sm text-sm leading-relaxed",
               msg.role === 'user' 
                 ? "bg-primary text-primary-foreground rounded-tr-none" 
                 : "bg-card border border-border rounded-tl-none text-foreground prose prose-sm max-w-none"
@@ -98,7 +98,7 @@ const ChatTutor = () => {
             <div className="h-10 w-10 rounded-full bg-card border border-border flex items-center justify-center text-primary animate-pulse">
               <Bot size={20} />
             </div>
-            <div className="p-4 rounded-2xl bg-card border border-border rounded-tl-none flex items-center gap-2">
+            <div className="p-4 rounded-lg bg-card border border-border rounded-tl-none flex items-center gap-2">
               <Loader2 className="h-4 w-4 animate-spin text-primary" />
               <span className="text-sm text-muted-foreground italic">Thinking...</span>
             </div>
@@ -113,7 +113,7 @@ const ChatTutor = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your question here (e.g. 'Explain quantum entanglement')..."
-            className="w-full bg-card border border-border rounded-2xl py-4 pl-6 pr-14 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm group-hover:shadow-md"
+            className="w-full bg-card border border-border rounded-lg py-4 pl-6 pr-14 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all shadow-sm group-hover:shadow-md"
           />
           <button 
             disabled={!input.trim() || isLoading}

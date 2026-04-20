@@ -39,7 +39,7 @@ const NotesGenerator = () => {
         <p className="text-muted-foreground mt-1">Transform any topic into structured study notes instantly.</p>
       </header>
 
-      <div className="bg-card p-8 rounded-2xl border border-border shadow-sm">
+      <div className="bg-card p-8 rounded-lg border border-border shadow-sm">
         <form onSubmit={handleGenerate} className="space-y-4">
           <label className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">What do you want to learn about?</label>
           <div className="flex gap-4">
@@ -77,7 +77,7 @@ const NotesGenerator = () => {
       </div>
 
       {notes && (
-        <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="bg-card rounded-lg border border-border shadow-sm overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="p-6 bg-secondary/30 border-b border-border flex justify-between items-center">
             <div className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-primary" />
@@ -111,7 +111,7 @@ const NotesGenerator = () => {
               ))}
             </div>
             
-            <div className="mt-12 p-8 bg-primary/5 rounded-2xl border border-primary/10 flex items-center justify-between">
+            <div className="mt-12 p-8 bg-primary/5 rounded-lg border border-primary/10 flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-bold text-primary">Ready to test your knowledge?</h3>
                 <p className="text-sm text-primary/70">Generate a quiz based specifically on these notes.</p>

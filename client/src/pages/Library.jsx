@@ -68,7 +68,7 @@ const Library = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search notes by topic or title..."
-              className="w-full bg-card border border-border rounded-2xl py-3 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 transition-all shadow-sm"
+              className="w-full bg-card border border-border rounded-lg py-3 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 transition-all shadow-sm"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ const Library = () => {
             <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
               <div className="flex justify-between items-start">
                 <div>
-                  <h2 className="text-4xl font-black tracking-tight mb-2">{selectedNote.title}</h2>
+                  <h2 className="text-4xl font-bold tracking-tight mb-2">{selectedNote.title}</h2>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest text-[10px]">
                       {selectedNote.topic}
@@ -139,18 +139,18 @@ const Library = () => {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <button className="bg-primary text-primary-foreground p-3 rounded-2xl hover:bg-primary/90 shadow-lg active:scale-95 transition-all">
+                  <button className="bg-primary text-primary-foreground p-3 rounded-lg hover:bg-primary/90 shadow-lg active:scale-95 transition-all">
                     <ExternalLink size={20} />
                   </button>
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-3xl p-10 shadow-sm min-h-[500px]">
-                <div className="prose prose-sm max-w-none text-foreground prose-h1:text-3xl prose-h1:font-black prose-p:text-base prose-p:leading-relaxed prose-li:text-base">
+              <div className="bg-card border border-border rounded-xl p-10 shadow-sm min-h-[500px]">
+                <div className="prose prose-sm max-w-none text-foreground prose-h1:text-3xl prose-h1:font-bold prose-p:text-base prose-p:leading-relaxed prose-li:text-base">
                   {selectedNote.content.split('\n').map((line, i) => (
                     <p key={i} className="mb-4">
                       {line.startsWith('#') ? (
-                        <strong className="text-2xl text-primary font-black block mt-8 mb-4">{line.replace(/#/g, '').trim()}</strong>
+                        <strong className="text-2xl text-primary font-bold block mt-8 mb-4">{line.replace(/#/g, '').trim()}</strong>
                       ) : line}
                     </p>
                   ))}
@@ -166,7 +166,7 @@ const Library = () => {
               <p className="max-w-xs text-muted-foreground">Select a note from the sidebar to view its contents and start studying.</p>
               <div className="mt-8 flex flex-col items-center gap-2">
                 <ChevronDown className="animate-bounce" />
-                <span className="text-xs font-black uppercase tracking-widest">Select to preview</span>
+                <span className="text-xs font-bold uppercase tracking-widest">Select to preview</span>
               </div>
             </div>
           )}

@@ -89,17 +89,17 @@ const QuizHub = () => {
         <div className="bg-primary/10 p-6 rounded-full mb-6">
           <Trophy className="h-16 w-16 text-primary" />
         </div>
-        <h1 className="text-4xl font-black mb-2 tracking-tight">Quiz Complete!</h1>
+        <h1 className="text-4xl font-bold mb-2 tracking-tight">Quiz Complete!</h1>
         <p className="text-muted-foreground text-lg mb-8">Great job on finishing the quiz on <span className="font-bold text-foreground">{topic}</span>.</p>
         
         <div className="grid grid-cols-2 gap-6 w-full mb-12">
-          <div className="bg-card border border-border p-6 rounded-2xl">
+          <div className="bg-card border border-border p-6 rounded-lg">
             <p className="text-sm font-semibold text-muted-foreground mb-1 uppercase">Your Score</p>
-            <h2 className="text-4xl font-black text-primary">{finalScore} / {total}</h2>
+            <h2 className="text-4xl font-bold text-primary">{finalScore} / {total}</h2>
           </div>
-          <div className="bg-card border border-border p-6 rounded-2xl">
+          <div className="bg-card border border-border p-6 rounded-lg">
             <p className="text-sm font-semibold text-muted-foreground mb-1 uppercase">Accuracy</p>
-            <h2 className="text-4xl font-black text-green-500">{percentage}%</h2>
+            <h2 className="text-4xl font-bold text-green-500">{percentage}%</h2>
           </div>
         </div>
 
@@ -127,7 +127,7 @@ const QuizHub = () => {
 
     return (
       <div className="p-8 max-w-4xl mx-auto space-y-8">
-        <div className="flex justify-between items-center bg-card p-4 rounded-2xl border border-border">
+        <div className="flex justify-between items-center bg-card p-4 rounded-lg border border-border">
           <div className="flex items-center gap-3">
             <div className="bg-secondary p-2 rounded-lg">
               <GraduationCap className="h-5 w-5 text-primary" />
@@ -148,7 +148,7 @@ const QuizHub = () => {
           </div>
         </div>
 
-        <div className="bg-card p-10 rounded-3xl border border-border shadow-sm space-y-8">
+        <div className="bg-card p-10 rounded-xl border border-border shadow-sm space-y-8">
           <h2 className="text-2xl font-bold text-foreground leading-tight">
             {currentQuestion.question}
           </h2>
@@ -160,7 +160,7 @@ const QuizHub = () => {
                 onClick={() => handleAnswerSelect(option)}
                 disabled={selectedAnswer !== null}
                 className={cn(
-                  "p-5 rounded-2xl border-2 text-left font-medium transition-all flex justify-between items-center group",
+                  "p-5 rounded-lg border-2 text-left font-medium transition-all flex justify-between items-center group",
                   selectedAnswer === null 
                     ? "border-border hover:border-primary hover:bg-primary/5" 
                     : option === currentQuestion.answer
@@ -178,7 +178,7 @@ const QuizHub = () => {
           </div>
 
           {showExplanation && (
-            <div className="mt-8 p-6 bg-secondary/50 rounded-2xl border border-border animate-in fade-in duration-300">
+            <div className="mt-8 p-6 bg-secondary/50 rounded-lg border border-border animate-in fade-in duration-300">
               <div className="flex items-center gap-2 mb-2 text-primary font-bold uppercase text-xs tracking-widest">
                 <Sparkles size={14} /> Explanation
               </div>
@@ -191,7 +191,7 @@ const QuizHub = () => {
           {selectedAnswer !== null && (
             <button
               onClick={nextQuestion}
-              className="w-full bg-foreground text-background py-5 rounded-2xl font-black text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-xl animate-in slide-in-from-bottom-2 duration-300"
+              className="w-full bg-foreground text-background py-5 rounded-lg font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-xl animate-in slide-in-from-bottom-2 duration-300"
             >
               {currentQuestionIndex + 1 === quiz.questions.length ? 'Finish Quiz' : 'Next Question'}
               <ArrowRight size={20} />
@@ -210,7 +210,7 @@ const QuizHub = () => {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-card p-10 rounded-3xl border border-border shadow-sm flex flex-col justify-center h-[500px]">
+        <div className="bg-card p-10 rounded-xl border border-border shadow-sm flex flex-col justify-center h-[500px]">
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
               <Sparkles className="text-primary h-6 w-6" /> Generate a New Quiz
@@ -226,7 +226,7 @@ const QuizHub = () => {
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 placeholder="e.g. Physics, History, Biology..."
-                className="w-full bg-background border border-border rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-full bg-background border border-border rounded-lg px-6 py-4 focus:ring-2 focus:ring-primary/20 transition-all"
               />
             </div>
             
@@ -251,7 +251,7 @@ const QuizHub = () => {
 
             <button 
               disabled={!topic.trim() || isLoading}
-              className="w-full bg-primary text-primary-foreground py-5 rounded-2xl font-black text-xl hover:bg-primary/90 transition-all disabled:opacity-50 shadow-lg flex items-center justify-center gap-3 active:scale-[0.98]"
+              className="w-full bg-primary text-primary-foreground py-5 rounded-lg font-bold text-xl hover:bg-primary/90 transition-all disabled:opacity-50 shadow-lg flex items-center justify-center gap-3 active:scale-[0.98]"
             >
               {isLoading ? (
                 <>
@@ -271,13 +271,13 @@ const QuizHub = () => {
           )}
         </div>
 
-        <div className="bg-secondary/30 rounded-3xl border border-border p-10 flex flex-col items-center justify-center text-center">
+        <div className="bg-secondary/30 rounded-xl border border-border p-10 flex flex-col items-center justify-center text-center">
           <div className="bg-primary/10 p-6 rounded-full mb-6">
             <Clock className="h-12 w-12 text-primary" />
           </div>
           <h3 className="text-xl font-bold mb-2">Quiz History</h3>
           <p className="text-muted-foreground mb-8">View your past performance and track your growth over time.</p>
-          <div className="w-full bg-card rounded-2xl p-6 border border-border opacity-50 flex items-center justify-center italic text-sm text-muted-foreground h-32">
+          <div className="w-full bg-card rounded-lg p-6 border border-border opacity-50 flex items-center justify-center italic text-sm text-muted-foreground h-32">
             No quiz results yet. Generate your first quiz to see stats here!
           </div>
         </div>
